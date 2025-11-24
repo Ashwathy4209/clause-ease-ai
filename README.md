@@ -1,25 +1,25 @@
-# AI-ClauseEase — Streamlit (Milestone 1 & 2)
-This package is a Streamlit implementation of the "Contract Language Simplifier" up to **Milestone 2**:
-- User registration & login (token-based)
-- Profile page to manage uploaded documents
-- Document upload/paste interface
-- Text preprocessing (cleaning, sentence segmentation, tokenization)
-- Readability metrics: Flesch–Kincaid Grade, Flesch Reading Ease, Gunning Fog
+# ClauseEase AI 🤖⚖️
 
-## How to run
-1. Create a Python environment (recommended).
-2. Install requirements:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Run the Streamlit app:
-   ```
-   streamlit run app.py
-   ```
-4. The app uses a local SQLite database at `database/app.db`.
+**ClauseEase AI** is an advanced legal document assistant powered by local LLMs and Streamlit. It simplifies complex contracts, extracts key clauses, and provides an interactive chat interface for querying legal documents without relying on external APIs for data processing.
 
-## Notes
-- This milestone uses a simple token-based authentication (tokens stored in DB).
-- File text extraction supports `.txt` and `.pdf` if `PyPDF2` is installed.
-- `python-docx` support for `.docx` is attempted if available; `.odt` support is limited.
-- Readability calculations use simple heuristics for syllable counting (no external corpora).
+## 🌟 Key Features
+* **📄 Document Simplification:** Converts complex legal jargon into simple English using BART and T5 models.
+* **💬 Interactive Chat:** Ask questions about your uploaded contracts and get context-aware answers.
+* **🔍 Clause Extraction:** Automatically identifies and highlights critical clauses (Termination, Liability, etc.).
+* **🔐 Secure Authentication:** User login system with role-based access (Admin/User).
+* **📊 Dashboard:** Visual analytics of analyzed contracts.
+
+## 🛠️ Tech Stack
+* **Frontend:** Streamlit
+* **AI Models:** Hugging Face Transformers (BART, Flan-T5, MiniLM)
+* **Database:** SQLite
+* **Backend Logic:** Python
+
+---
+
+## 🚀 Installation Guide
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/Ashwathy4209/clause-ease-ai.git](https://github.com/Ashwathy4209/clause-ease-ai.git)
+cd clause-ease-ai
