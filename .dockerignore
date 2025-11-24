@@ -1,0 +1,20 @@
+# Ignore Virtual Env and IDE
+clause_env/
+.vscode/
+__pycache__/
+*/__pycache__/
+*.pyc
+
+# Ignore Secrets (We will mount these via Docker Compose)
+.env
+*.secret
+client_secrets.json
+
+# Ignore Local Databases
+db.sqlite3
+db/master.db
+db/tenants/*.db
+
+# Ignore Heavy Model Cache BUT allow the download script
+models_cache/*
+!models_cache/models_download.py

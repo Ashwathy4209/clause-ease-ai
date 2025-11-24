@@ -1,0 +1,21 @@
+# --- Security & Secrets (NEVER UPLOAD) ---
+.env
+*.env
+client_secrets.json
+jwt.secret
+db/jwt.secret
+
+# --- Database & Data ---
+*.db
+*.sqlite3
+db/database/
+db/tenants/
+
+# --- Python System Files ---
+__pycache__/
+*.py[cod]
+clause_env/
+.vscode/
+
+# --- Model Weights (Too Large) ---
+models_cache/

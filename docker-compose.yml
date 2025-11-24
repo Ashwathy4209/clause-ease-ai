@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  clause-app:
+    build: .
+    container_name: clause_ai
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    volumes:
+      # 1. Persist Data (Host Folder : Container Folder)
+      - ./db:/app/db
+      - ./db.sqlite3:/app/db.sqlite3
+      
+      # 2. INJECT SECRETS (Critical Fix)
+      # We map the local file to the path defined in your environment variable
+      - ./jwt.secret:/app/secrets/jwt.secret
+      - ./client_secrets.json:/app/client_secrets.json
+      
+    env_file:
+      - .env
+    environment:
+      # Ensure your python code reads this variable!
+      - JWT_SECRET_PATH=/app/secrets/jwt.secret
+      # If your code looks for client_secrets in root, change this or move the file
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/client_secrets.json
